@@ -47,6 +47,7 @@ import {FileDecorator} from './app/plugins/file-decorator'
 import {CodeFormat} from './app/plugins/code-format'
 import {SolidityUmlGen} from './app/plugins/solidity-umlgen'
 import { CompilationDetailsPlugin } from './app/plugins/compile-details'
+import { VyperCompilationDetailsPlugin } from './app/plugins/vyper-compile-details'
 import {ContractFlattener} from './app/plugins/contractFlattener'
 import {OpenAIGpt} from './app/plugins/openaigpt'
 
@@ -185,7 +186,7 @@ class AppComponent {
 
     // ----------------- Compilation Details ----------------------------
     const compilationDetails = new CompilationDetailsPlugin(appManager)
-
+    const vyperCompilationDetails = new VyperCompilationDetailsPlugin(appManager)
     // ----------------- ContractFlattener ----------------------------
     const contractFlattener = new ContractFlattener()
 
@@ -312,6 +313,7 @@ class AppComponent {
       search,
       solidityumlgen,
       compilationDetails,
+      vyperCompilationDetails,
       contractFlattener,
       solidityScript,
       openaigpt,
